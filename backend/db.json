@@ -79,6 +79,11 @@
       "conteudo": "          da",
       "autoria": "adad",
       "id": "N_P6TC3g1-U"
+    },
+    {
+      "conteudo": "Da vida reclama, mas sem ela não vive",
+      "autoria": "Mestre Yoda",
+      "id": "-0220d04bRM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
