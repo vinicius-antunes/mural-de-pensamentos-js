@@ -42,8 +42,8 @@ const ui = {
     pensamentoAutoria.classList.add("pensamento-autoria");
 
     const botaoEditar = document.createElement("button");
-    pensamentoAutoria.classList.add("botao-editar");
-    botaoEditar.oneclick = () => ui.prencherFormulario(pensamento.id)
+    botaoEditar.classList.add("botao-editar");
+    botaoEditar.onclick = () => ui.preencherFormulario(pensamento.id);
 
     const iconeEditar = document.createElement("img")
     iconeEditar.src = "assets/imagens/icone-editar.png"
@@ -59,7 +59,7 @@ const ui = {
     li.appendChild(pensamentoConteudo)
     li.appendChild(pensamentoAutoria)
     listaPensamentos.appendChild(li)
-    i.appendChild(icones)
+    li.appendChild(icones);
     },
     limparFormulario() {
         document.getElementById("pensamento-form").reset();
