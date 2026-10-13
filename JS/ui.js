@@ -39,4 +39,4 @@ const ui = {
     }
 }
 
-export default ui
+export default ui;
