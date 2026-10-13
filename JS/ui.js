@@ -59,7 +59,7 @@ const ui = {
     li.appendChild(pensamentoConteudo)
     li.appendChild(pensamentoAutoria)
     listaPensamentos.appendChild(li)
-    li.appendChild(icones)
+    i.appendChild(icones)
     },
     limparFormulario() {
         document.getElementById("pensamento-form").reset();
