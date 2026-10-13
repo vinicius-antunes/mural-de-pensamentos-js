@@ -3,7 +3,7 @@ import api from "./api.js"
 
 const ui = {
 
-    async prencherFormulario(pensamentoId){
+    async preencherFormulario(pensamentoId){
         const pensamento = await api.buscarPensamentosPorId(pensamentoId)
         document.getElementById("pensamento-id").value = pensamento.id
         document.getElementById("pensamento-conteudo").value = pensamento.conteudo
