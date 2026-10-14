@@ -1,30 +1,40 @@
-const URL_BASE = "http://localhost:3000"
+const URL_BASE = "http://localhost:3000";
 
 const api = {
+    async buscarPensamentos() {
+        const response = await axios.get(`${URL_BASE}/pensamentos`);
+        return response.data;
+    },
+
+    async salvarUmPensamento(pensamento) {
+        const response = await axios.post(
+            `${URL_BASE}/pensamentos`,
+            pensamento
+        );
+
+        return response.data;
+    },
+
     async buscarPensamentosPorId(id) {
-    const response = await fetch(`${URL_BASE}/pensamentos/${id}`);
-    return await response.json();
-},
+        const response = await axios.get(
+            `${URL_BASE}/pensamentos/${id}`
+        );
 
-async editarPensamento(pensamento) {
-    const response = await fetch(
-        `${URL_BASE}/pensamentos/${pensamento.id}`,
-        {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(pensamento)
-        }
-    );
+        return response.data;
+    },
 
-    return await response.json();
-},
+    async editarPensamento(pensamento) {
+        const response = await axios.put(
+            `${URL_BASE}/pensamentos/${pensamento.id}`,
+            pensamento
+        );
 
-async excluirPensamento(id) {
-    await fetch(`${URL_BASE}/pensamentos/${id}`, {
-        method: "DELETE"
-    });
-}
+        return response.data;
+    },
+
+    async excluirPensamento(id) {
+        await axios.delete(`${URL_BASE}/pensamentos/${id}`);
     }
+};
+
 export default api;

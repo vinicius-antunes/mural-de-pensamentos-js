@@ -1,4 +1,10 @@
 {
-  "pensamentos": [],
+  "pensamentos": [
+    {
+      "conteudo": "adad",
+      "autoria": "adad",
+      "id": "z4pk3BFPup4"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
