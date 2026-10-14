@@ -1,60 +1,105 @@
-![Thumbnail](./thumb.png)
+![Prévia do Mural de Pensamentos](./thumb.png)
 
-# Memoteca
+# Mural de Pensamentos
 
-Memoteca é um aplicativo organizador de pensamentos e frases que permite cadastrar, listar, editar e deletar pensamentos, incluindo informações como conteúdo e autoria.
+Aplicação web educacional para registrar, visualizar, editar e excluir pensamentos, frases e citações. O projeto pratica operações CRUD, manipulação do DOM e comunicação assíncrona com uma API local.
 
-## 🔨 Funcionalidades do projeto
+## Funcionalidades
 
-`Cadastro de pensamentos`: Permite adicionar novos pensamentos à lista, inserindo informações como conteúdo e autoria.
+- Cadastrar pensamentos com conteúdo e autoria.
+- Listar automaticamente os pensamentos salvos.
+- Editar pensamentos existentes.
+- Excluir pensamentos pelo identificador.
+- Exibir uma mensagem quando o mural estiver vazio.
+- Atualizar a interface sem recarregar a página.
 
-`Listagem de pensamentos`: Exibe os pensamentos cadastrados, permitindo visualizar o texto e a autoria.
+## Tecnologias
 
-`Edição de pensamentos`: Permite editar pensamentos existentes, atualizando as informações conforme necessário.
+- HTML5
+- CSS3
+- JavaScript
+- Axios
+- Node.js
+- JSON Server
 
-`Exclusão de pensamentos`: Permite remover pensamentos da lista.
+## Como o projeto funciona
 
-## ✔️ Técnicas e tecnologias utilizadas
+O frontend utiliza o Axios para enviar requisições HTTP ao JSON Server:
 
-`JavaScript`: Linguagem de programação utilizada para desenvolver a lógica do aplicativo.
+| Operação | Método | Rota |
+| --- | --- | --- |
+| Listar | `GET` | `/pensamentos` |
+| Cadastrar | `POST` | `/pensamentos` |
+| Buscar por ID | `GET` | `/pensamentos/:id` |
+| Editar | `PUT` | `/pensamentos/:id` |
+| Excluir | `DELETE` | `/pensamentos/:id` |
 
-`Fetch API`: Utilizada para realizar requisições HTTP para comunicação com o servidor.
+Os dados são armazenados localmente no arquivo `backend/db.json`.
 
-`Axios`: Biblioteca usada para facilitar e simplificar as requisições HTTP.
+## Como executar
 
-`Node.js`: Plataforma utilizada para executar o ambiente de desenvolvimento.
+Você precisa ter o [Node.js](https://nodejs.org/) instalado.
 
-`JSON Server`: Utilizado para simular um backend e facilitar o desenvolvimento e teste das operações CRUD.
+1. Clone o repositório:
 
-`CSS`: Utilizado para estilização da interface do aplicativo.
+```bash
+git clone https://github.com/vinicius-antunes/mural-de-pensamentos-js.git
+```
 
+2. Acesse a pasta do backend:
 
-## 📁 Link do Figma
+```bash
+cd mural-de-pensamentos-js/backend
+```
 
-Você pode [acessar o figma do projeto aqui](https://www.figma.com/design/Sz1gmmemxqcB3amInL4Ndp/Rebrand-Memoteca-%7C-Curso-CRUD?node-id=148-26&t=FpdmfbiM1i1s6REQ-0).
-
-## 🛠️ Abrir e rodar o projeto
-
-Para executar a API fake, você vai precisar do NodeJS; a versão utilizada foi a 20.12.2.
-
-Instale o JSON Server globalmente (se ainda não estiver instalado):
+3. Instale o JSON Server, caso ainda não esteja instalado:
 
 ```bash
 npm install -g json-server
 ```
 
-Para executar, abra um novo terminal e, dentro da pasta backend, execute:
+4. Inicie a API local:
 
 ```bash
 npm start
 ```
 
-Acesse o backend localmente em seu navegador:
+A API ficará disponível em:
 
-http://localhost:3000
+```text
+http://localhost:3000/pensamentos
+```
 
-Para executar o frontend, abra o projeto no Visual Studio Code. Com a extensão Live Server instalada, clique com o botão direito no arquivo index.html e selecione "Open with Live Server" no menu de contexto.
+5. Abra o `index.html` com a extensão Live Server do Visual Studio Code.
 
-Acesse o frontend localmente em seu navegador:
+## Estrutura principal
 
-http://localhost:5500
+```text
+mural-de-pensamentos-js/
+├── assets/
+├── backend/
+│   ├── db.json
+│   └── package.json
+├── css/
+│   └── styles.css
+├── JS/
+│   ├── api.js
+│   ├── main.js
+│   └── ui.js
+└── index.html
+```
+
+## Aprendizados
+
+Neste projeto foram praticados:
+
+- Funções assíncronas com `async` e `await`.
+- Requisições HTTP com Axios.
+- Operações CRUD.
+- Manipulação dinâmica do DOM.
+- Módulos JavaScript com `import` e `export`.
+- Separação entre API, interface e lógica principal.
+
+## Créditos
+
+Projeto desenvolvido por **Vinicius Antunes** para fins educacionais, com base no curso de JavaScript da Alura.
