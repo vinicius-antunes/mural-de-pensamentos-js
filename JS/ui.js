@@ -50,20 +50,19 @@ const ui = {
     iconeEditar.alt = "Editar"
     botaoEditar.appendChild(iconeEditar)
 
-    const botaoExcluir = document.createElement("button");
-    botaoExcluir.classList.add("botao-excluir");
-    botaoExcluir.onclick = async () => {
+    const botaoExcluir.onclick = async () => {
         try {
-            await api.excluirPensamento(pensamento.id)
+        await api.excluirPensamento(pensamento.id);
+        await ui.renderizarPensamentos();
         } catch (error) {
-            alert("Erro ao excluir pensamento")
-        }
+            alert("Erro ao excluir pensamento");
     }
+
 
     const iconeExcluir = document.createElement("img")
     iconeExcluir.src = "assets/imagens/icone-Excluir.png"
     iconeExcluir.alt = "Excluir"
-    botaoExcluir.appendChild(iconeExcluir)
+    icones.appendChild(botaoExcluir)
 
 
     const icones = document.createElement("div")
