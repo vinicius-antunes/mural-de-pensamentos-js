@@ -1,4 +1,3 @@
-![Prévia do Mural de Pensamentos](./thumb.png)
 
 # 💭 Mural de Pensamentos
 
