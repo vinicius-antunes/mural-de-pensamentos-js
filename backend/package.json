@@ -1,13 +1,17 @@
 {
-  "name": "backend",
+  "name": "mural-de-pensamentos-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "API local do projeto Mural de Pensamentos",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 3001"
+    "start": "json-server --watch db.json --port 3000"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "json-server",
+    "crud",
+    "javascript"
+  ],
+  "author": "Vinicius Antunes",
   "license": "ISC",
   "type": "commonjs"
 }
