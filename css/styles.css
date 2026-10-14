@@ -282,3 +282,13 @@ span {
   background: #041832;
   margin: 96px 0 48px 0;
 }
+
+.mensagem-vazia {
+    list-style: none;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    color: #6c5a72;
+    font-size: 18px;
+    font-weight: 600;
+}

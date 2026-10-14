@@ -10,17 +10,31 @@ const ui = {
         document.getElementById("pensamento-autoria").value = pensamento.autoria
     },
 
-    async renderizarPensamentos () {
-        const listaPensamentos = document.getElementById("lista-pensamentos")
-        listaPensamentos.innerHTML = ""
-        try{
-            const pensamentos = await api.buscarPensamentos()
-                pensamentos.forEach(ui.adicionarPensamentoNaLista);
+    async renderizarPensamentos() {
+    const listaPensamentos = document.getElementById("lista-pensamentos");
 
-        } catch(error) {
+    listaPensamentos.innerHTML = "";
 
+    try {
+        const pensamentos = await api.buscarPensamentos();
+
+        if (pensamentos.length === 0) {
+            const mensagemVazia = document.createElement("li");
+
+            mensagemVazia.textContent =
+                "Ainda não existem pensamentos no mural.";
+
+            mensagemVazia.classList.add("mensagem-vazia");
+
+            listaPensamentos.appendChild(mensagemVazia);
+            return;
         }
-    },
+
+        pensamentos.forEach(ui.adicionarPensamentoNaLista);
+    } catch (error) {
+        console.error("Erro ao renderizar os pensamentos:", error);
+    }
+},
     adicionarPensamentoNaLista(pensamento) {
         const listaPensamentos = document.getElementById("lista-pensamentos")
         const li = document.createElement("li")
